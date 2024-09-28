@@ -32,4 +32,5 @@ const dashboardWrapper = ({children}: {children: React.ReactNode}) => {
       </StoreProvider>
   )
 }
+
 export default dashboardWrapper;
