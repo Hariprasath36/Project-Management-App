@@ -76,7 +76,7 @@ export const updateTaskStatus = async (
   try {
     const updatedTask = await prisma.task.update({
       where: {
-        id: parseInt(taskId),
+        id: Number(taskId),
       },
       data: {
         status: status,
