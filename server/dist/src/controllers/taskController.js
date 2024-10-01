@@ -69,7 +69,7 @@ const updateTaskStatus = (req, res) => __awaiter(void 0, void 0, void 0, functio
     try {
         const updatedTask = yield prisma.task.update({
             where: {
-                id: parseInt(taskId),
+                id: Number(taskId),
             },
             data: {
                 status: status,

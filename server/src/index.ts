@@ -5,7 +5,7 @@ import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
 /* ROUTE IMPORTS */
-import projectRoutes from "./routes/projectRouts";
+import projectRoutes from "./routes/projectRoutes";
 import taskRoutes from "./routes/taskRouts";
 /*CONFGURATION*/
 
