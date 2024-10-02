@@ -4,12 +4,12 @@ import React, { useState } from 'react'
 
 type Props = {
   activeTab: string;
-  setActiveTab: (tabName: string) => void
+  setActiveTab: (tabName: string) => void;
 
 };
 
 const ProjectHeader = ({activeTab, setActiveTab}:Props) => {
-  const [isModelNewProjectOpen, setIsModelNewProjectOpen] = useState(false);
+  const [isModalNewProjectOpen, setIsModalNewProjectOpen] = useState(false);
 
   return (
   <div className="px-4 xl:px-6">
@@ -38,10 +38,10 @@ type TabButtonProps = {
   name: string;
   icon: React.ReactNode;
   setActiveTab: (tabName: string) => void;
-  setActive: string;
+  activeTab: string;
 }
-const TabButton = ({ name, icon, setActiveTab, setActive}: TabButtonProps) => {
-  const isActive = setActive === name;
+const TabButton = ({ name, icon, setActiveTab, activeTab}: TabButtonProps) => {
+  const isActive = activeTab === name;
 
   return(
     <button
