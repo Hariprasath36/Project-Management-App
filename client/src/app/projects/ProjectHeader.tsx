@@ -1,3 +1,4 @@
+import Header from '@/components/Header';
 import React, { useState } from 'react'
 
 type Props = {
@@ -9,10 +10,10 @@ type Props = {
 const ProjectHeader = ({activeTab, setActiveTab}:Props) => {
   const [isModelNewProjectOpen, setIsModelNewProjectOpen] = useState(false);
 
-  return <div className='px-4 xl:px-6'>
+  return <div className="px-4 xl:px-6">
     {/* MODEL NEW PROJECT */}
-  <div className='px-4 pt-6 lg:pb-4 lg:pt-8'>
-<Header />
+  <div className="pb-6 pt-6 lg:pb-4 lg:pt-8">
+<Header name="Product Design Development"/>
 </div>
   </div>;
 };

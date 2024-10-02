@@ -13,7 +13,7 @@ const [IsModalNewTaskOpen, setIsModalNewTaskOpen] = useState(false);
 
   return (<div>
     {/* MODEL NEW TASK */}
-   {/* <ProjectHeader activeTab ={activeTab} setActiveTab={setActiveTab} /> */}
+   <ProjectHeader activeTab ={activeTab} setActiveTab={setActiveTab} />
     {/* { activeTab --- "Board" &&} (
     <Board />
     )} */}
