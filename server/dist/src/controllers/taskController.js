@@ -24,14 +24,12 @@ const getTasks = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
                 assignee: true,
                 comments: true,
                 attachments: true,
-            },
+            }
         });
         res.json(tasks);
     }
     catch (error) {
-        res
-            .status(500)
-            .json({ message: `Error retrieving tasks: ${error.message}` });
+        res.status(500).json({ message: `Error retrieving tasks: ${error.message}` });
     }
 });
 exports.getTasks = getTasks;
@@ -51,14 +49,12 @@ const createTask = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
                 projectId,
                 authorUserId,
                 assignedUserId,
-            },
+            }
         });
         res.status(201).json(newTask);
     }
     catch (error) {
-        res
-            .status(500)
-            .json({ message: `Error creating a task: ${error.message}` });
+        res.status(500).json({ message: `Error creating a task: ${error.message}` });
     }
 });
 exports.createTask = createTask;
@@ -72,12 +68,12 @@ const updateTaskStatus = (req, res) => __awaiter(void 0, void 0, void 0, functio
             },
             data: {
                 status: status,
-            },
+            }
         });
         res.json(updatedTask);
     }
     catch (error) {
-        res.status(500).json({ message: `Error updating task: ${error.message}` });
+        res.status(500).json({ message: `Error updating tasks: ${error.message}` });
     }
 });
 exports.updateTaskStatus = updateTaskStatus;
