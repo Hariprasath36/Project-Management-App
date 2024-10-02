@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AlertCircle, AlertOctagonIcon, AlertTriangle, Briefcase, ChevronDown, ChevronUp, Home,Layers,LockIcon, LucideIcon, Search, Settings, ShieldAlert, User, Users, X } from "lucide-react"; // Removed unused imports
 import { usePathname } from "next/navigation";
-import { useAppDispatch, useAppSelector } from "../redux";
+import { useAppDispatch, useAppSelector } from "../../redux";
 import { setIsSidebarCollapsed } from "@/state";
 import { useGetProjectsQuery } from "@/state/api";
 
