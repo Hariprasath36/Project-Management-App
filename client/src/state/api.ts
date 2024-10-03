@@ -104,7 +104,7 @@ export interface Task{
 });
 
  export const { useGetProjectsQuery, useCreateProjectMutation,
-    useGetTasksQuery, useCreateTaskMutation,
+    useGetTasksQuery, useCreateTaskMutation,useUpdateTaskStatusMutation,
  } = api;
 
 
