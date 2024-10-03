@@ -186,6 +186,27 @@ const Task = ({ task }: TaskProps) => {
               {formattedStartDate && <span>{formattedStartDate} </span>}
               {formattedDueDate && <span> - {formattedDueDate} </span>}
             </div>
+            <p className='text-sm text-gray-600 dark:text-neutral-500'>
+              {task.description}
+            </p>
+            <div className='mt-4 border-t border-gray-200 dark:border-stroke-dark' />
+
+            {/* USERS */}
+            <div className='mt-3 flex items-center justify-between'>
+              <div className='flex -space-x-[6px] overflow-hidden'>
+                {task.assignee && (
+                  <Image
+                  key={task.assignee.userId}
+                  src={`/${task.assignee.profilePictureUrl!}`}
+                  alt={task.assignee.username}
+                  width={30}
+                  height={30}
+                  className='h-8 w-8 rounded-full border-2 border-white object-cover dark:border-dark-secondary'  
+                  />
+                )}
+
+              </div>
+            </div>
           </div>
           </div>
       );
