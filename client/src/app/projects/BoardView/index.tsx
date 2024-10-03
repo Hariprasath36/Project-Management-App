@@ -27,7 +27,7 @@ const BoardView = ({id, setIsModalNewTaskOpen}: BoardProps) => {
 
   return  (
   <DndProvider backend={HTML5Backend}>
-    <div className="flex flex-col GAP-4 P-4 md:grid-cols-2 xl:grid-cols-4">
+    <div className="grid grid-col gap-4 P-4 md:grid-cols-2 xl:grid-cols-4">
       {taskStatus.map((status) => (
         <TaskColumn
         key={status}
@@ -76,10 +76,10 @@ const TaskColumn = ({
       drop(instance);
     }}
     className={`sl:py-4 rounded-lg py-2 xl:px-2 ${isOver ?"bg-blue-100 dark:bg-neutral-950":""}`}>
-      <div className='mb-3 flex e-full'>
+      <div className='mb-3 flex w-full'>
         <div className={`w-2 !bg-[${statusColor[status]}] rounded-s-lg`}
         style={{backgroundColor: statusColor[status]}}>
-          <div className='flex w-full items-center justify-between rounded-e-lg bg-white px-5 py-4 dark:bg-dark-secondary'>
+          <div className='flex w-full items-center justify-between rounded-e-lg bg-white px-5 py-4 dark:bg-black-secondary'>
             <h3 className='flex items-center text-lg font-semibold dark:text-white'>
               {status}{" "}
             </h3>
