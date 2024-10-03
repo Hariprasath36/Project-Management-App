@@ -23,16 +23,16 @@ const BoardView = ({id, setIsModalNewTaskOpen}: BoardProps) => {
   };
 
   if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>An error occurred while fetching data</div>;
+  if (error) return <div>An error occurred while fetching tasks</div>;
 
   return  (
   <DndProvider backend={HTML5Backend}>
-    <div className="grid grid-col gap-4 P-4 md:grid-cols-2 xl:grid-cols-4">
+    <div className="grid grid-cols-1 gap-4 P-4 md:grid-cols-2 xl:grid-cols-4">
       {taskStatus.map((status) => (
         <TaskColumn
         key={status}
         status={status}
-        tasks={tasks || []}
+        tasks={tasks ||[]}
         moveTask={moveTask}
         setIsModalNewTaskOpen={setIsModalNewTaskOpen}
         />
@@ -80,13 +80,13 @@ const TaskColumn = ({
         <div className={`w-2 !bg-[${statusColor[status]}] rounded-s-lg`}
         style={{backgroundColor: statusColor[status]}}>
           <div className='flex w-full items-center justify-between rounded-e-lg bg-white px-5 py-4 dark:bg-black-secondary'>
-            <h3 className='flex items-center text-lg font-semibold dark:text-white'>
+            <h3 className='flex items-center text-lg    font-semibold dark:text-white'>
               {status}{" "}
-            </h3>
-            <span className='ml-2 inline-block rounded-full bg-gray-200 p-1 text-center text-sm leading-none dark:bg-dark-tertiary' 
-            style={{width: "1.5rem",height: "1.5rem"}}>
+              <span className='ml-2 inline-block rounded-full bg-gray-200 p-1 text-center text-sm leading-none dark:bg-dark-tertiary' 
+              style={{width: "1.5rem",height: "1.5rem"}}>
               {tasksCount}
-            </span>
+              </span>
+            </h3>
           </div>
         </div>
       </div>
