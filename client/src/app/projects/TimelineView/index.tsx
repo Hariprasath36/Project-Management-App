@@ -72,7 +72,7 @@ const Timeline = ({ id, setIsModalNewTaskOpen }: Props) => {
       <div className="overflow-hidden rounded-md bg-white shadow dark:bg-dark-secondary dark:text-white">
         <div className="timeline">
           <Gantt
-            tasks={ganttTasks} 
+            tasks={ganttTasks}
             {...displayOptions}
             columnWidth={displayOptions.viewMode === ViewMode.Month ? 150 : 100}
             listCellWidth="100px"
