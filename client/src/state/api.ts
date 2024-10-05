@@ -133,5 +133,3 @@ export interface Team {
     useGetUsersQuery,
     useGetTeamsQuery,
  } = api;
-
-
