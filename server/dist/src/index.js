@@ -4,11 +4,21 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+// express is a framework. It is a web framework. -> spring,fastapi,flask, django
+// what is node?
+// node is a runtime environment.
+// jre is java runtime environment
+// for python we use pypy or python
 const dotenv_1 = __importDefault(require("dotenv"));
+// dotenv is a package that helps us to use environment variables
 const body_parser_1 = __importDefault(require("body-parser"));
 const cors_1 = __importDefault(require("cors"));
+// cors is a package that helps us to allow cross-origin requests
 const helmet_1 = __importDefault(require("helmet"));
+// helmet is a package that helps us to secure our server, like security
+// it secures our server by setting various HTTP headers, like security
 const morgan_1 = __importDefault(require("morgan"));
+// morgan is a package that helps us to log our requests
 /* ROUTE IMPORTS */
 const projectRouts_1 = __importDefault(require("./routes/projectRouts"));
 const taskRouts_1 = __importDefault(require("./routes/taskRouts"));
@@ -24,6 +34,8 @@ app.use(helmet_1.default.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use((0, morgan_1.default)("common"));
 app.use(body_parser_1.default.json());
 app.use(body_parser_1.default.urlencoded({ extended: false }));
+// urlencoded is a middleware that helps us to parse url encoded data.
+// 
 app.use((0, cors_1.default)());
 /* ROUTES */
 app.get("/", (req, res) => {

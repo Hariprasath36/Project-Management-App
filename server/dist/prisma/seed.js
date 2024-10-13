@@ -14,6 +14,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const client_1 = require("@prisma/client");
 const fs_1 = __importDefault(require("fs"));
+// fs here means file system, it is a module that comes with Node.js
+// it is used for reading and writing files and directories to the file system.
 const path_1 = __importDefault(require("path"));
 const prisma = new client_1.PrismaClient();
 function deleteAllData(orderedFileNames) {
@@ -52,7 +54,10 @@ function main() {
             const filePath = path_1.default.join(dataDirectory, fileName);
             const jsonData = JSON.parse(fs_1.default.readFileSync(filePath, "utf-8"));
             const modelName = path_1.default.basename(fileName, path_1.default.extname(fileName));
+            // extname is used to get the extension of the file
+            // basename is used to get the name of the file
             const model = prisma[modelName];
+            // the above line is a type assertion, which tells TypeScript that the variable 'model' will be of type 'any' and not 'PrismaClient'
             try {
                 for (const data of jsonData) {
                     yield model.create({ data });

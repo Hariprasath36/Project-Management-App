@@ -12,6 +12,7 @@ export const getProjects = async (req: Request, res: Response) : Promise<void> =
     }
 };
 
+
 export const createProject = async (
     req: Request,
     res: Response

@@ -4,14 +4,21 @@
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
+// what is prisma client?
+  // - prisma client is a library that allows you to connect to your database and perform CRUD operations.
+
 generator client {
   provider = "prisma-client-js"
 }
+// what is generator client?
+  // - generator client is a tool that generates code that connects to your database and performs CRUD operations.
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+// 
 
 model User {
   userId            Int     @id @default(autoincrement())
@@ -27,7 +34,8 @@ model User {
   comments       Comment[]
   team           Team?            @relation(fields: [teamId], references: [id])
 }
-
+// cognito id means, a unique identifier for a user.
+// userid means, a unique identifier for a user.  
 model Team {
   id                   Int           @id @default(autoincrement())
   teamName             String

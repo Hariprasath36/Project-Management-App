@@ -1,5 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import fs from "fs";
+// fs here means file system, it is a module that comes with Node.js
+// it is used for reading and writing files and directories to the file system.
 import path from "path";
 const prisma = new PrismaClient();
 
@@ -40,7 +42,10 @@ async function main() {
     const filePath = path.join(dataDirectory, fileName);
     const jsonData = JSON.parse(fs.readFileSync(filePath, "utf-8"));
     const modelName = path.basename(fileName, path.extname(fileName));
+    // extname is used to get the extension of the file
+    // basename is used to get the name of the file
     const model: any = prisma[modelName as keyof typeof prisma];
+    // the above line is a type assertion, which tells TypeScript that the variable 'model' will be of type 'any' and not 'PrismaClient'
 
     try {
       for (const data of jsonData) {
